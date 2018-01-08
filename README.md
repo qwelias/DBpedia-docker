@@ -2,26 +2,23 @@
 
 Build yourself a DBpedia container.
 
+## Warning!
+* Building Virtuoso with DBpedia requires significant resources.
+* The exact amount of resources would depend on languages you're importing.
+* Core requires about 50GB of disk space and 16GB of ram.
+* Make sure to properly configure `virtuoso/virtuoso.ini`
+
 ## Building
 
-**Warning!**
-> Building Virtuoso with DBpedia requires significant resources.
-
-> The exact amount of resources would depend on languages you're importing.
-
-> Core requires about 50GB of disk space and 16GB of ram.
-
-> Make sure to properly configure `virtuoso/virtuoso.ini`
-
-* Download, unpack and prepare required DBpedia files:
+1. Download, unpack and prepare required DBpedia files:
 ```sh
 $ ./prepare.sh
 ```
-* Start new virtuoso instance:
+2. Start new virtuoso instance:
 ```sh
 $ ./dbpedia.sh
 ```
-* Start import procedure:
+3. Start import procedure:
 ```sh
 $ ./import.sh
 ```
