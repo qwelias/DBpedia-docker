@@ -31,4 +31,4 @@ Access point is http://localhost:8890/sparql.
 
 Currently scripts will only download and import core DBpedia files.
 
-If you wish to add more languages, you'll need to edit `download`, `unpack` and `move` targets in Makefile as well as list of imported folders in `virtuoso/import.sh` file.
+If you wish to add more languages, you'll need to edit `prepare.sh` as well as list of imported folders in `virtuoso/import.sh` file.
