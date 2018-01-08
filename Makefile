@@ -22,17 +22,15 @@ move:
 # executes download, unpack and move one after another
 prepare: download unpack move
 
-# creates new instance of virtuoso with 64G of RAM limit
+# creates new instance of virtuoso
 virtuoso:
 	docker run --name dbpedia \
-		-v ${PWD}/db:/data \
-		-v ${PWD}/virtuoso/virtuoso.ini:/data/virtuoso.ini \
+		-p 8890:8890 \
+		-e DEFAULT_GRAPH=http://dbpedia.org \
+		-v ${PWD}/db:/usr/local/virtuoso-opensource/var/lib/virtuoso/db \
+		-v ${PWD}/virtuoso/virtuoso.ini:/virtuoso.ini \
 		-v ${PWD}/dbpedia:/import \
 		-d tenforce/virtuoso
-
-# stops and removes virtuoso
-stop-virtuoso:
-	docker stop dbpedia && docker rm dbpedia
 
 # starts importing the data into running instance of virtuoso
 import:
