@@ -12,15 +12,15 @@ Build yourself a DBpedia container.
 
 * Download, unpack and prepare required DBpedia files:
 ```sh
-$ make prepare
+$ ./prepare.sh
 ```
 * Start new virtuoso instance:
 ```sh
-$ make virtuoso
+$ ./dbpedia.sh
 ```
 * Start import procedure:
 ```sh
-$ make import
+$ ./import.sh
 ```
 
 In the end it should yield a ready-to-use running dbpedia container and db directory filled with built db data.
